@@ -34,6 +34,11 @@ public class ChaseState : StateMachineBehaviour
         {
             animator.SetBool("isChasing", false);
         }
+
+        if (distance < 2)
+        {
+            animator.SetBool("isAttacking", true);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
