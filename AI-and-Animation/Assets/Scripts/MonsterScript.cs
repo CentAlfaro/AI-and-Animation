@@ -22,7 +22,7 @@ public class MonsterScript : MonoBehaviour
 
     public void DamagePlayer()
     {
-        player.OnDamage(2000);
+        player.OnDamage(damageDealt);
         playFX();
     }
 }
