@@ -10,12 +10,20 @@ public class MonsterScript : MonoBehaviour
 
     [Header("InGame Stats")]
     [SerializeField] private float damageDealt = 20;
+    [SerializeField] private float monsterHealth = 100;
+
+    public void monsterOnDamage(float onDamageDealt)
+    {
+        monsterHealth -= onDamageDealt;
+        Debug.Log($"Monster Health = {monsterHealth}");
+    }
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("player").GetComponent<PlayerScript>();
     }
-    public void playFX() {
+    public void playFX() 
+    {
         bloodFx.Play();
 
     }
@@ -25,4 +33,6 @@ public class MonsterScript : MonoBehaviour
         player.OnDamage(damageDealt);
         playFX();
     }
+
+  
 }

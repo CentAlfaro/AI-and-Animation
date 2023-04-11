@@ -6,6 +6,8 @@ TagManager:
   tags:
   - waypoint
   - player
+  - Missile
+  - Monster
   layers:
   - Default
   - TransparentFX
