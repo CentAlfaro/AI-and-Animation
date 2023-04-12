@@ -2,30 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIdleState : StateMachineBehaviour
+public class PlayerAttackState : StateMachineBehaviour
 {
     private PlayerScript _player;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _player = animator.GetComponent<PlayerScript>();
-        _player.canMove = true;
+        _player.canMove = false;
     }
 
-     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (_player.isMoving)
+        if (!_player.isAttacking && _player.preparingToMove)
         {
+            animator.SetBool("IsAttacking", false);
             animator.SetBool("IsMoving", true);
         }
-        if (_player.isAttacking)
+        else if (!_player.isAttacking && !_player.preparingToMove)
         {
-            animator.SetBool("IsAttacking", true);
+            animator.SetBool("IsAttacking", false);
+            
         }
     }
 
-     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         

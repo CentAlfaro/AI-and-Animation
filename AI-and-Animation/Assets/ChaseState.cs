@@ -15,7 +15,7 @@ public class ChaseState : StateMachineBehaviour
         agent.speed = 3;
         player = GameObject.FindGameObjectWithTag("player").transform;
 
-        Debug.Log(agent.destination);
+        // Debug.Log(agent.destination);
 
         if (agent.isStopped)
         {

@@ -560,7 +560,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2138084654}
-  weaponDamage: 20
 --- !u!1 &428830587
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,7 +955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1438546959266459337, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.568
+      value: 0.56799996
       objectReference: {fileID: 0}
     - target: {fileID: 1438546959266459337, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2188,8 +2187,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786785424}
-  m_LocalRotation: {x: -0.61691004, y: -0.0007117987, z: 0.00055532163, w: -0.7870332}
-  m_LocalPosition: {x: 1.6708964, y: 33.3722, z: -10.467778}
+  m_LocalRotation: {x: -0.6840564, y: -0.0006582336, z: 0.00061735156, w: -0.7294286}
+  m_LocalPosition: {x: 2.8651044, y: 30.55756, z: -2.8938103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2561,4 +2560,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pHealth: 100
+  weaponDamage: 20
+  mSpeed: 10
+  isAttacking: 0
+  isMoving: 0
+  canMove: 0
+  preparingToMove: 0
+  isRolling: 0
+  canRoll: 0
   WeaponCollider: {fileID: 391572879}
+  currentMonster: {fileID: 0}
